@@ -1,103 +1,192 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SAGAZ 26</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-      color: white;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAGAZ 26</title>
 
-    header {
-      text-align: center;
-      padding: 20px;
-      font-size: 32px;
-      font-weight: bold;
-      color: #00ffff;
-      text-shadow: 0 0 10px #00ffff;
-      background: black;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: "Courier New", monospace;
+  background: black;
+  color: #00ff00;
+  overflow-x: hidden;
+}
 
-    .tabs {
-      display: flex;
-      justify-content: center;
-      background: #111;
-    }
+header {
+  text-align: center;
+  padding: 20px;
+  font-size: 32px;
+  font-weight: bold;
+  color: #00ff00;
+  text-shadow: 0 0 15px #00ff00;
+  background: black;
+}
 
-    .tab {
-      padding: 15px 20px;
-      cursor: pointer;
-      color: #00ffff;
-      border-bottom: 2px solid transparent;
-    }
+.tabs {
+  display: flex;
+  justify-content: center;
+  background: #111;
+}
 
-    .tab:hover {
-      background: #222;
-      border-bottom: 2px solid #00ffff;
-    }
+.tab {
+  padding: 15px 20px;
+  cursor: pointer;
+  color: #00ff00;
+}
 
-    .content {
-      display: none;
-      padding: 20px;
-    }
+.tab:hover {
+  background: #022;
+}
 
-    .active {
-      display: block;
-    }
+.content {
+  display: none;
+  padding: 20px;
+}
 
-    .box {
-      background: rgba(0, 0, 0, 0.7);
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 15px #00ffff;
-    }
-  </style>
+.active {
+  display: block;
+}
+
+.box {
+  background: rgba(0,0,0,0.8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #00ff00;
+  margin-bottom: 20px;
+}
+
+textarea {
+  width: 100%;
+  height: 80px;
+  background: black;
+  color: #00ff00;
+  border: 1px solid #00ff00;
+  margin-top: 10px;
+}
+
+button {
+  margin-top: 10px;
+  background: black;
+  color: #00ff00;
+  border: 1px solid #00ff00;
+  padding: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #00ff00;
+  color: black;
+}
+
+/* canvas fundo */
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+</style>
 </head>
+
 <body>
+
+<canvas id="matrix"></canvas>
 
 <header>SAGAZ 26</header>
 
 <div class="tabs">
-  <div class="tab" onclick="openTab('mm2')">SCRIPTS DE MM2</div>
-  <div class="tab" onclick="openTab('brainrot')">SCRIPT DE ROUBE UM BRAINROT</div>
-  <div class="tab" onclick="openTab('blox')">SCRIPTS DE BLOX FRUITS</div>
+  <div class="tab" onclick="openTab('mm2')">MM2</div>
+  <div class="tab" onclick="openTab('brainrot')">BRAINROT</div>
+  <div class="tab" onclick="openTab('blox')">BLOX FRUITS</div>
 </div>
 
 <div id="mm2" class="content active">
   <div class="box">
     <h2>Scripts de MM2</h2>
-    <p>loadstring(game:HttpGet('https://raw.smokingscripts.org/vertex.lua'))()</p>  <p> <p>loadstring(game:HttpGet("https://raw.githubusercontent.com/ThatSick/HoneyLua/refs/heads/main/Loader.luau"))()
 
-</p></p>
+    <textarea id="script1">loadstring(game:HttpGet('https://raw.smokingscripts.org/vertex.lua'))()</textarea>
+    <button onclick="copiar('script1')">Copiar</button>
+
+    <textarea id="script2">loadstring(game:HttpGet("https://raw.githubusercontent.com/ThatSick/HoneyLua/refs/heads/main/Loader.luau"))()</textarea>
+    <button onclick="copiar('script2')">Copiar</button>
+
   </div>
 </div>
 
 <div id="brainrot" class="content">
   <div class="box">
     <h2>Roube um Brainrot</h2>
-    <p>loadstring(game:HttpGet("https://pandadevelopment.net/virtual/file/0988845b2372c5ee"))()
-</p>     <p>loadstring(game:HttpGet("https://raw.githubusercontent.com/onliengamerop/Steal-a-brainrot/refs/heads/main/Protected_3771863424757750.lua.txt"))()
-</p>
+
+    <textarea id="script3">loadstring(game:HttpGet("https://pandadevelopment.net/virtual/file/0988845b2372c5ee"))()</textarea>
+    <button onclick="copiar('script3')">Copiar</button>
+
+    <textarea id="script4">loadstring(game:HttpGet("https://raw.githubusercontent.com/onliengamerop/Steal-a-brainrot/refs/heads/main/Protected_3771863424757750.lua.txt"))()</textarea>
+    <button onclick="copiar('script4')">Copiar</button>
+
   </div>
 </div>
 
 <div id="blox" class="content">
   <div class="box">
     <h2>Blox Fruits</h2>
-    <p>Coloque seus scripts aqui...</p>
+
+    <textarea id="script5">-- loadstring(game:HttpGet("https://raw.githubusercontent.com/TlDinhKhoi/Xeter/refs/heads/main/Main.lua"))()</textarea>
+    <button onclick="copiar('script5')">Copiar</button>
+
   </div>
 </div>
 
 <script>
-  function openTab(tabId) {
-    let contents = document.querySelectorAll('.content');
-    contents.forEach(c => c.classList.remove('active'));
-    document.getElementById(tabId).classList.add('active');
+function openTab(tabId) {
+  let contents = document.querySelectorAll('.content');
+  contents.forEach(c => c.classList.remove('active'));
+  document.getElementById(tabId).classList.add('active');
+}
+
+function copiar(id) {
+  let texto = document.getElementById(id);
+  texto.select();
+  document.execCommand("copy");
+  alert("Copiado!");
+}
+
+/* MATRIX EFFECT */
+const canvas = document.getElementById("matrix");
+const ctx = canvas.getContext("2d");
+
+canvas.height = window.innerHeight;
+canvas.width = window.innerWidth;
+
+let letters = "01";
+letters = letters.split("");
+
+let fontSize = 12;
+let columns = canvas.width / fontSize;
+
+let drops = [];
+for (let x = 0; x < columns; x++) drops[x] = 1;
+
+function draw() {
+  ctx.fillStyle = "rgba(0,0,0,0.05)";
+  ctx.fillRect(0,0,canvas.width,canvas.height);
+
+  ctx.fillStyle = "#0f0";
+  ctx.font = fontSize + "px monospace";
+
+  for (let i = 0; i < drops.length; i++) {
+    let text = letters[Math.floor(Math.random()*letters.length)];
+    ctx.fillText(text, i*fontSize, drops[i]*fontSize);
+
+    if (drops[i]*fontSize > canvas.height && Math.random()>0.975)
+      drops[i] = 0;
+
+    drops[i]++;
   }
+}
+
+setInterval(draw, 33);
 </script>
 
 </body>
