@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAGAZ 26</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      color: white;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+      font-size: 32px;
+      font-weight: bold;
+      color: #00ffff;
+      text-shadow: 0 0 10px #00ffff;
+      background: black;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: center;
+      background: #111;
+    }
+
+    .tab {
+      padding: 15px 20px;
+      cursor: pointer;
+      color: #00ffff;
+      border-bottom: 2px solid transparent;
+    }
+
+    .tab:hover {
+      background: #222;
+      border-bottom: 2px solid #00ffff;
+    }
+
+    .content {
+      display: none;
+      padding: 20px;
+    }
+
+    .active {
+      display: block;
+    }
+
+    .box {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #00ffff;
+    }
+  </style>
+</head>
+<body>
+
+<header>SAGAZ 26</header>
+
+<div class="tabs">
+  <div class="tab" onclick="openTab('mm2')">SCRIPTS DE MM2</div>
+  <div class="tab" onclick="openTab('brainrot')">SCRIPT DE ROUBE UM BRAINROT</div>
+  <div class="tab" onclick="openTab('blox')">SCRIPTS DE BLOX FRUITS</div>
+</div>
+
+<div id="mm2" class="content active">
+  <div class="box">
+    <h2>Scripts de MM2</h2>
+    <p>loadstring(game:HttpGet('https://raw.smokingscripts.org/vertex.lua'))()</p>  <p> <p>loadstring(game:HttpGet("https://raw.githubusercontent.com/ThatSick/HoneyLua/refs/heads/main/Loader.luau"))()
+
+</p></p>
+  </div>
+</div>
+
+<div id="brainrot" class="content">
+  <div class="box">
+    <h2>Roube um Brainrot</h2>
+    <p>loadstring(game:HttpGet("https://pandadevelopment.net/virtual/file/0988845b2372c5ee"))()
+</p>     <p>loadstring(game:HttpGet("https://raw.githubusercontent.com/onliengamerop/Steal-a-brainrot/refs/heads/main/Protected_3771863424757750.lua.txt"))()
+</p>
+  </div>
+</div>
+
+<div id="blox" class="content">
+  <div class="box">
+    <h2>Blox Fruits</h2>
+    <p>Coloque seus scripts aqui...</p>
+  </div>
+</div>
+
+<script>
+  function openTab(tabId) {
+    let contents = document.querySelectorAll('.content');
+    contents.forEach(c => c.classList.remove('active'));
+    document.getElementById(tabId).classList.add('active');
+  }
+</script>
+
+</body>
+</html>
